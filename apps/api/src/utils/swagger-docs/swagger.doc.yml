@@ -1,0 +1,247 @@
+
+  /page:
+    get:
+     summary: Get all pages
+     tags: [page]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/page'
+ 
+    post:
+      summary: Create page
+      tags: [page]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/page'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/page'
+ 
+  /page/{id}:
+    get:
+      summary: Get page by id
+      tags: [page]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/page'
+ 
+    put:
+      summary: Edit page
+      tags: [page]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/page'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/page'
+ 
+    delete:
+      summary: Delete page
+      tags: [page]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/page'
+
+  /post:
+    get:
+     summary: Get all posts
+     tags: [post]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/post'
+ 
+    post:
+      summary: Create post
+      tags: [post]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/post'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post'
+ 
+  /post/{id}:
+    get:
+      summary: Get post by id
+      tags: [post]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post'
+ 
+    put:
+      summary: Edit post
+      tags: [post]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/post'
+ 
+    delete:
+      summary: Delete post
+      tags: [post]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post'
+
+  /user:
+    get:
+     summary: Get all users
+     tags: [user]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/user'
+ 
+    post:
+      summary: Create user
+      tags: [user]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+  /user/{id}:
+    get:
+      summary: Get user by id
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+    put:
+      summary: Edit user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/user'
+ 
+    delete:
+      summary: Delete user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  components:
+    schemas:
+  
+      page:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          name:
+            type: string
+          user:
+            type: string
+      post:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          user:
+            type: string
+          page:
+            type: string
+      user:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          email:
+            type: string
+          gender:
+            type: string
+          age:
+            type: number
+          password:
+            type: string
